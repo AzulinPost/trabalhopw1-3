@@ -2,11 +2,11 @@
 require_once './vendor/autoload.php';
 use PDO;
 
-$bd = new PDO('mysql:localhost;dbname=biblioteca', 'root', '');
+$bd = new PDO('mysql:host=localhost;dbname=biblioteca', 'root', '');
 
 $comando = $bd->prepare('SELECT * FROM generos');
 $comando->execute();
-$generos = $comando->fetchALL(PDO::FETCH_ASSOC);
+$generos = $comando->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
